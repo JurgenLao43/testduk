@@ -10,3 +10,5 @@
 {"ts":"2025-09-08T23:22:28Z","stage":"2","chain":"ethereum","block":23237927,"notes":"Mapped owners/governance/paused/access-control and EIP1967 traits for 17 targets"}
 {"ts":"2025-09-08T23:24:56Z","stage":"3","chain":"ethereum","block":23237927,"notes":"Stage 3 zero-case tests passed; no obvious arbitrary upgrade/mint/access-control bypass via direct calls"}
 {"ts":"2025-09-08T23:37:22Z","stage":"5A","chain":"ethereum","block":23237927,"attempt":"UniswapV2 WETH->USDC swing vs ChainlinkAdapter oracle","result":"Oracle unchanged; DEX moved sharply; no manipulation"}
+{"ts":"2025-09-08T23:44:50Z","stage":"6","chain":"ethereum","block":23237927,"notes":"PnL normalization non-positive (<=0) for large Uniswap trade"}
+{"ts":"2025-09-08T23:44:50Z","stage":"7","chain":"ethereum","block":23237927,"notes":"Oracle price stable vs DEX swing; invariant holds"}
