@@ -1,3 +1,9 @@
 
 {"ts":"2025-09-08T23:01:45Z","chain":null,"block":null,"targets":[],"tool_calls":[],"hypothesis":"scaffold init","poc":"","result":"BLOCKED","attacker_pnl":0,"notes":"MANDATORY_STEP_BLOCKED: missing TARGET_ADDRESSES/FORK_BLOCK_NUMBER"}
 {"ts":"2025-09-08T23:13:08Z","stage":"1","chain":"ethereum","targets":17,"notes":"ABIs and proxy info fetched; snapshot/roles blocked until fork block"}
+{"ts":"2025-09-08T23:20:15Z","stage":"1b","chain":"ethereum","block":23237927,"summary":{
+  "chain": "ethereum",
+  "targets": 17,
+  "proxies": 13,
+  "implementations": 13
+}}
