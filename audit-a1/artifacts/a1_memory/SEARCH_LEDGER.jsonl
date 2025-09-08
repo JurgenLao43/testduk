@@ -1,0 +1,2 @@
+
+{"ts":"2025-09-08T23:01:45Z","chain":null,"block":null,"targets":[],"tool_calls":[],"hypothesis":"scaffold init","poc":"","result":"BLOCKED","attacker_pnl":0,"notes":"MANDATORY_STEP_BLOCKED: missing TARGET_ADDRESSES/FORK_BLOCK_NUMBER"}
