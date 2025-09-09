@@ -12,3 +12,4 @@
 {"ts":"2025-09-08T23:37:22Z","stage":"5A","chain":"ethereum","block":23237927,"attempt":"UniswapV2 WETH->USDC swing vs ChainlinkAdapter oracle","result":"Oracle unchanged; DEX moved sharply; no manipulation"}
 {"ts":"2025-09-08T23:44:50Z","stage":"6","chain":"ethereum","block":23237927,"notes":"PnL normalization non-positive (<=0) for large Uniswap trade"}
 {"ts":"2025-09-08T23:44:50Z","stage":"7","chain":"ethereum","block":23237927,"notes":"Oracle price stable vs DEX swing; invariant holds"}
+{"ts":"2025-09-09T10:53:32Z","stage":"5A-extend","chain":"ethereum","block":23237927,"notes":"Uniswap V3 0.05% and 1% tiers swung pool prices; oracle unchanged within 0.5%"}
