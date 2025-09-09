@@ -7,11 +7,17 @@ on:
 
 env:
   FOUNDRY_PROFILE: ci
+  MAINNET_RPC_URL: ${{ secrets.MAINNET_RPC_URL }}
+  FORK_BLOCK_NUMBER: ${{ secrets.FORK_BLOCK_NUMBER }}
+  TARGET_ADDRESSES: ${{ secrets.TARGET_ADDRESSES }}
 
 jobs:
   check:
     name: Foundry project
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: audit-a1
     steps:
       - uses: actions/checkout@v4
         with:
@@ -34,7 +40,14 @@ jobs:
           forge build --sizes
         id: build
 
+      - name: Check secrets presence
+        if: ${{ env.MAINNET_RPC_URL == '' || env.FORK_BLOCK_NUMBER == '' }}
+        run: |
+          echo "Skipping tests: Missing MAINNET_RPC_URL or FORK_BLOCK_NUMBER secret"
+          exit 0
+
       - name: Run Forge tests
+        if: ${{ env.MAINNET_RPC_URL != '' && env.FORK_BLOCK_NUMBER != '' }}
         run: |
           forge test -vvv
         id: test
