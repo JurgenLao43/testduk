@@ -27,7 +27,8 @@ Findings (tested at fork):
 
 Exploit Attempts (Stage 5A):
 - Aim: Move DEX spot then consume manipulated price via oracle read to profit
-- Result: Oracle price unchanged; attack PnL normalized to base (USDC) <= 0; unprofitable
+- Venues: Uniswap V2; Uniswap V3 (0.05%, 0.3%, 1%); Balancer (scaffold); Velodrome (scaffold)
+- Result: For executed venues (V2/V3), oracle price unchanged within 0.5%; attack PnL normalized to base (USDC) ≤ 0; unprofitable. Balancer/Velodrome included as zero-case scaffolds.
 
 Defensive Recommendations:
 - Maintain adapter diversity; ensure backup feeds configured for critical assets

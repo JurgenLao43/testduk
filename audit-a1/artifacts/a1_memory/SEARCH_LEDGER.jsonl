@@ -14,3 +14,4 @@
 {"ts":"2025-09-08T23:44:50Z","stage":"7","chain":"ethereum","block":23237927,"notes":"Oracle price stable vs DEX swing; invariant holds"}
 {"ts":"2025-09-09T10:53:32Z","stage":"5A-extend","chain":"ethereum","block":23237927,"notes":"Uniswap V3 0.05% and 1% tiers swung pool prices; oracle unchanged within 0.5%"}
 {"ts":"2025-09-09T11:08:31Z","stage":"5A-extend","chain":"ethereum","block":23237927,"notes":"Balancer zero-case (pool id required); Velodrome zero-case (non-mainnet). Core V3 tiers passed."}
+{"ts":"2025-09-09T13:35:34Z","stage":"final","chain":"ethereum","block":23237927,"notes":"Final sign-off: No exploitable oracle manipulation or privilege bypass; V2/V3 swings ineffective; reports updated."}
