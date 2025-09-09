@@ -1,0 +1,23 @@
+{
+  "name": "Foundry Auditing Env",
+  "install": "bash -lc 'set -euxo pipefail; export DEBIAN_FRONTEND=noninteractive; if command -v apt-get >/dev/null 2>&1; then apt-get update && apt-get install -y ca-certificates curl build-essential pkg-config libssl-dev llvm clang cmake jq git; fi; if [ ! -d \"$HOME/.foundry\" ]; then curl -L https://foundry.paradigm.xyz | bash; fi; $HOME/.foundry/bin/foundryup'",
+  "env": {
+    "RUSTUP_HOME": "$HOME/.rustup",
+    "CARGO_HOME": "$HOME/.cargo"
+  },
+  "terminals": [
+    {
+      "name": "forge version",
+      "command": "bash -lc '$HOME/.foundry/bin/forge --version || forge --version'"
+    },
+    {
+      "name": "build",
+      "command": "bash -lc 'cd audit-a1 && forge build -vvv'"
+    },
+    {
+      "name": "test (requires MAINNET_RPC_URL)",
+      "command": "bash -lc 'cd audit-a1 && forge test -vvv'"
+    }
+  ]
+}
+
