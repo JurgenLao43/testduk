@@ -6,7 +6,11 @@ Safety rails: read-only historical forks only. Do not write to mainnet/testnets.
 
 1. Install Foundry: `curl -L https://foundry.paradigm.xyz | bash && foundryup`
 2. Clone repo or open workspace.
-3. Copy `.env.example` to `.env`, set read-only RPCs and (optional) explorer keys.
+3. Create `.env` with:
+   - `MAINNET_RPC_URL` (or Arbitrum RPC for CHAIN_ID=42161)
+   - `ETHERSCAN_API_KEY`
+   - `TARGET_ADDRESSES` (comma/space-separated)
+   - `FORK_BLOCK_NUMBER` (from `scripts/blockFinder.ts`)
 4. Run all tests:
 
 ```
@@ -71,6 +75,17 @@ $ forge build
 
 ```shell
 $ forge test
+### Resolve ABIs (Etherscan V2, multi-chain)
+
+```shell
+$ CHAIN_ID=42161 ETHERSCAN_API_KEY=... TARGET_ADDRESSES="0x... 0x..." node scripts/resolve_abis_v2.cjs
+```
+
+### Find deterministic attack block (uses Etherscan V2, optional ARCHIVE_RPC_URL)
+
+```shell
+$ CHAIN_ID=42161 TARGET_ADDRESS=0x... ETHERSCAN_API_KEY=... ARCHIVE_RPC_URL=https://... ts-node scripts/blockFinder.ts
+```
 ```
 
 ### Format
