@@ -1,0 +1,59 @@
+name: Foundry Audit CI
+
+on:
+  push:
+    branches:
+      - cursor/setup-foundry-environment-for-auditing-1f88
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: audit-a1
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Foundry
+        run: |
+          curl -L https://foundry.paradigm.xyz | bash
+          ~/.foundry/bin/foundryup
+
+      - name: Show forge version
+        run: forge --version
+
+      - name: Forge build
+        run: forge build -vvv
+
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: audit-a1
+    env:
+      MAINNET_RPC_URL: ${{ secrets.MAINNET_RPC_URL }}
+      FORK_BLOCK_NUMBER: ${{ secrets.FORK_BLOCK_NUMBER }}
+      TARGET_ADDRESSES: ${{ secrets.TARGET_ADDRESSES }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Foundry
+        run: |
+          curl -L https://foundry.paradigm.xyz | bash
+          ~/.foundry/bin/foundryup
+
+      - name: Check secrets presence
+        if: ${{ env.MAINNET_RPC_URL == '' || env.FORK_BLOCK_NUMBER == '' }}
+        run: |
+          echo "Skipping tests: Missing MAINNET_RPC_URL or FORK_BLOCK_NUMBER secret"
+          exit 0
+
+      - name: Forge test
+        if: ${{ env.MAINNET_RPC_URL != '' && env.FORK_BLOCK_NUMBER != '' }}
+        run: forge test -vvv
+
+
