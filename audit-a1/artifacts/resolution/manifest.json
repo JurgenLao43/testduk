@@ -1,23 +1,72 @@
 {
-  "chain": "ethereum",
-  "generatedAt": "2025-09-09T14:05:49.749Z",
+  "chain": "arbitrum",
+  "generatedAt": "2025-09-09T23:45:48.124Z",
   "targets": [
     {
-      "address": "0x604DD02d620633Ae427888d41bfd15e38483736E",
-      "name": "ERC1967Proxy",
+      "address": "0x0A1a1A107E45b7Ced86833863f482BC5f4ed82EF",
+      "name": "TransparentUpgradeableProxy",
       "proxy": "EIP1967/Transparent",
-      "implementation": "0xc54277ba51a3d351f6f66396661eb4e5672b0d0f",
+      "implementation": "0x664cc3c1e294f425dd8b9440ea687d578b33329c",
       "creation": {
-        "txHash": "0x7aa2c19747380d18c51b26337e9fbd48dd8b2240c3372c378e2e3543d47d7a0c",
-        "creator": "0xf5506183269d8e1274019097b9c1eda86ab606bd",
-        "blockNumber": "20067877"
+        "txHash": "0xf6f82338cf86e8158c30b44cbd18c92f01f2d0941323154a699c9d718f7015de",
+        "creator": "0xba9a3c0a22baebe8c4926227bde32d6edc0d5d28",
+        "blockNumber": "336209932"
       },
-      "abiPath": "0x604DD02d620633Ae427888d41bfd15e38483736E.abi.json",
-      "sourceMetaPath": "0x604DD02d620633Ae427888d41bfd15e38483736E.source.meta.json",
+      "abiPath": "0x0A1a1A107E45b7Ced86833863f482BC5f4ed82EF.abi.json",
+      "sourceMetaPath": "0x0A1a1A107E45b7Ced86833863f482BC5f4ed82EF.source.meta.json",
       "implementationMeta": {
-        "name": "AstherusVault",
+        "name": "USDai",
         "proxy": null
       }
+    },
+    {
+      "address": "0x0B2b2B2076d95dda7817e785989fE353fe955ef9",
+      "name": "TransparentUpgradeableProxy",
+      "proxy": "EIP1967/Transparent",
+      "implementation": "0xb991e9588e10c8968e0670d0dfbc9fe0e3a56740",
+      "creation": {
+        "txHash": "0xf6f82338cf86e8158c30b44cbd18c92f01f2d0941323154a699c9d718f7015de",
+        "creator": "0xba9a3c0a22baebe8c4926227bde32d6edc0d5d28",
+        "blockNumber": "336209932"
+      },
+      "abiPath": "0x0B2b2B2076d95dda7817e785989fE353fe955ef9.abi.json",
+      "sourceMetaPath": "0x0B2b2B2076d95dda7817e785989fE353fe955ef9.source.meta.json",
+      "implementationMeta": {
+        "name": "StakedUSDai",
+        "proxy": null
+      }
+    },
+    {
+      "address": "0xffA10065Ce1d1C42FABc46e06B84Ed8FfEb4baE5",
+      "error": "Error: etherscan v2 http 502"
+    },
+    {
+      "address": "0xffB20098FD7B8E84762eea4609F299D101427f24",
+      "error": "Error: etherscan v2 http 502"
+    },
+    {
+      "address": "0x664cC3c1E294f425DD8b9440ea687D578b33329C",
+      "error": "Error: etherscan v2 http 502"
+    },
+    {
+      "address": "0xeb19604e807381A5aE3D639BC0B4805400Bec55e",
+      "error": "Error: etherscan v2 http 502"
+    },
+    {
+      "address": "0xb991e9588E10C8968e0670D0dfbC9FE0e3A56740",
+      "error": "Error: etherscan v2 http 502"
+    },
+    {
+      "address": "0xa33bC63c475D23459C7e881171E68C86fF888aC1",
+      "error": "Error: etherscan v2 http 502"
+    },
+    {
+      "address": "0x8b4Ca42bB3B1d789859f106222CF7DC5EEd48CCb",
+      "error": "Error: etherscan v2 http 502"
+    },
+    {
+      "address": "0x936F210d277bf489A3211CeF9AB4BC47a7B69C96",
+      "error": "Error: etherscan v2 http 502"
     }
   ]
 }
