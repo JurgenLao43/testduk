@@ -1,5 +1,11 @@
 {
+  "type": "module",
+  "scripts": {
+    "block:find": "ts-node --transpileOnly scripts/blockFinder.ts"
+  },
   "devDependencies": {
-    "ethers": "^6.15.0"
+    "ethers": "^6.15.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.4"
   }
 }
