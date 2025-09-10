@@ -1,7 +1,8 @@
 {
   "type": "module",
   "scripts": {
-    "block:find": "ts-node --transpileOnly scripts/blockFinder.ts"
+    "block:find": "ts-node --transpileOnly scripts/blockFinder.ts",
+    "cve:scan": "node scripts/solc_cve_scan.mjs"
   },
   "devDependencies": {
     "ethers": "^6.15.0",

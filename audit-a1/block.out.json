@@ -1,0 +1,23 @@
+{
+  "target": "0x0A1a1A107E45b7Ced86833863f482BC5f4ed82EF",
+  "chainId": 42161,
+  "attackBlock": 336209932,
+  "justification": [
+    "creation: 336209932",
+    "init(first internal tx): 336209932",
+    "upgradeLast: 0",
+    "anchor(chosen boundary): 336209932",
+    "no state-gated pass within +2000 ⇒ using anchor"
+  ],
+  "alternates": [],
+  "etherscanEvidence": [
+    "https://api.etherscan.io/v2/api?chainid=42161&apikey=7P1VMDDCHR645JVXD3SCDY7F3MZK1UN75R&module=contract&action=getcontractcreation&contractaddresses=0x0A1a1A107E45b7Ced86833863f482BC5f4ed82EF",
+    "https://api.etherscan.io/v2/api?chainid=42161&apikey=7P1VMDDCHR645JVXD3SCDY7F3MZK1UN75R&module=contract&action=getabi&address=0x0A1a1A107E45b7Ced86833863f482BC5f4ed82EF",
+    "https://api.etherscan.io/v2/api?chainid=42161&apikey=7P1VMDDCHR645JVXD3SCDY7F3MZK1UN75R&module=account&action=txlistinternal&address=0x0A1a1A107E45b7Ced86833863f482BC5f4ed82EF&startblock=0&endblock=99999999&page=1&offset=10000&sort=asc",
+    "https://api.etherscan.io/v2/api?chainid=42161&apikey=7P1VMDDCHR645JVXD3SCDY7F3MZK1UN75R&module=logs&action=getLogs&address=0x0A1a1A107E45b7Ced86833863f482BC5f4ed82EF&topic0=0xbc7cd75a20ee27fd9adebab32041f755214dbc6bffa90cc0225b39da2e5c2d3b&fromBlock=0&toBlock=latest&page=1&offset=1000",
+    "https://api.etherscan.io/v2/api?chainid=42161&apikey=7P1VMDDCHR645JVXD3SCDY7F3MZK1UN75R&module=logs&action=getLogs&address=0x0A1a1A107E45b7Ced86833863f482BC5f4ed82EF&topic0=0x7e644d79422f17c01e4894b5f4f588d331ebfa28653d42ae832dc59e38c9798f&fromBlock=0&toBlock=latest&page=1&offset=1000"
+  ],
+  "notes": [
+    "Pin this block in Blocks.s.sol and in your Foundry tests."
+  ]
+}

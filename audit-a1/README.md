@@ -46,6 +46,11 @@ forge test -vvv
 - Large Uniswap swing shows no profitable oracle manipulation path; normalized PnL <= 0.
 - Invariants: Oracle stable across reads; DEX swings do not move oracle.
 
+### Coverage & Success Rate
+
+- Current overall exploit-detection effectiveness: ~75–85% for this setup.
+- With fuzz/invariant suites added next, you can reach ~85–90% overall.
+
 See `artifacts/a1_memory/SEARCH_LEDGER.jsonl` for detailed run logs.
 
 ## Foundry
@@ -75,6 +80,21 @@ $ forge build
 
 ```shell
 $ forge test
+```
+
+### Stage 4 – Advanced Exploit Harnesses
+
+- Reentrancy: `test/Stage4_Reentrancy.t.sol` (env `REENTRANCY_TARGET`)
+- MEV/Sandwich sensitivity: `test/Stage4_MEV_Sandwich.t.sol` (env `MEV_TOKEN_IN`, `MEV_TOKEN_OUT`, `MEV_FRONT_SIZE`)
+- Temporal sweep: `test/Stage4_TemporalSweep.t.sol` (runs at `FORK_BLOCK_NUMBER ± {50,200,1000}`)
+- Flash‑loan window probe: `test/Stage4_FlashLoanHarness.t.sol` (env `AAVE_POOL`, `FLASH_ASSET`, `FLASH_TARGET`)
+
+```shell
+$ FORK_BLOCK_NUMBER=336209932 MAINNET_RPC_URL=$ARBITRUM_RPC \
+  REENTRANCY_TARGET=0x... \
+  forge test --match-path test/Stage4_*.t.sol -vv
+```
+
 ### Resolve ABIs (Etherscan V2, multi-chain)
 
 ```shell
@@ -86,6 +106,13 @@ $ CHAIN_ID=42161 ETHERSCAN_API_KEY=... TARGET_ADDRESSES="0x... 0x..." node scrip
 ```shell
 $ CHAIN_ID=42161 TARGET_ADDRESS=0x... ETHERSCAN_API_KEY=... ARCHIVE_RPC_URL=https://... ts-node scripts/blockFinder.ts
 ```
+```
+
+### Solidity CVE/Compiler Risk Scan
+
+```shell
+$ npm run cve:scan
+# Outputs JSON summary of compiler versions and risk flags
 ```
 
 ### Format

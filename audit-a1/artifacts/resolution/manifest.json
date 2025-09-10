@@ -1,6 +1,6 @@
 {
   "chain": "arbitrum",
-  "generatedAt": "2025-09-09T23:45:48.124Z",
+  "generatedAt": "2025-09-10T00:23:27.310Z",
   "targets": [
     {
       "address": "0x0A1a1A107E45b7Ced86833863f482BC5f4ed82EF",
@@ -20,7 +20,7 @@
       }
     },
     {
-      "address": "0x0B2b2B2076d95dda7817e785989fE353fe955ef9",
+      "address": "0x0B2b2B2076d95Dda7817E785989fE353fE955eF9",
       "name": "TransparentUpgradeableProxy",
       "proxy": "EIP1967/Transparent",
       "implementation": "0xb991e9588e10c8968e0670d0dfbc9fe0e3a56740",
@@ -29,8 +29,8 @@
         "creator": "0xba9a3c0a22baebe8c4926227bde32d6edc0d5d28",
         "blockNumber": "336209932"
       },
-      "abiPath": "0x0B2b2B2076d95dda7817e785989fE353fe955ef9.abi.json",
-      "sourceMetaPath": "0x0B2b2B2076d95dda7817e785989fE353fe955ef9.source.meta.json",
+      "abiPath": "0x0B2b2B2076d95Dda7817E785989fE353fE955eF9.abi.json",
+      "sourceMetaPath": "0x0B2b2B2076d95Dda7817E785989fE353fE955eF9.source.meta.json",
       "implementationMeta": {
         "name": "StakedUSDai",
         "proxy": null
@@ -38,35 +38,107 @@
     },
     {
       "address": "0xffA10065Ce1d1C42FABc46e06B84Ed8FfEb4baE5",
-      "error": "Error: etherscan v2 http 502"
+      "name": "OAdapter",
+      "proxy": null,
+      "implementation": null,
+      "creation": {
+        "txHash": "0x6c4122009554a58869dfffda9b3fba366687829a91fb04a15bebb44051f2b8aa",
+        "creator": "0x8de14e014402c0677b075a69122f94c0425cc179",
+        "blockNumber": "339743308"
+      },
+      "abiPath": "0xffA10065Ce1d1C42FABc46e06B84Ed8FfEb4baE5.abi.json",
+      "sourceMetaPath": "0xffA10065Ce1d1C42FABc46e06B84Ed8FfEb4baE5.source.meta.json"
     },
     {
       "address": "0xffB20098FD7B8E84762eea4609F299D101427f24",
-      "error": "Error: etherscan v2 http 502"
+      "name": "OAdapter",
+      "proxy": null,
+      "implementation": null,
+      "creation": {
+        "txHash": "0x6c4122009554a58869dfffda9b3fba366687829a91fb04a15bebb44051f2b8aa",
+        "creator": "0x8de14e014402c0677b075a69122f94c0425cc179",
+        "blockNumber": "339743308"
+      },
+      "abiPath": "0xffB20098FD7B8E84762eea4609F299D101427f24.abi.json",
+      "sourceMetaPath": "0xffB20098FD7B8E84762eea4609F299D101427f24.source.meta.json"
     },
     {
       "address": "0x664cC3c1E294f425DD8b9440ea687D578b33329C",
-      "error": "Error: etherscan v2 http 502"
+      "name": "USDai",
+      "proxy": null,
+      "implementation": null,
+      "creation": {
+        "txHash": "0x7670729484b62e919300d4fe92b2458625b1d59f1b33105f8b64768b12a7d461",
+        "creator": "0x5a9b0b5e7856359a581637a1b1df9c9d83c28e97",
+        "blockNumber": "375801492"
+      },
+      "abiPath": "0x664cC3c1E294f425DD8b9440ea687D578b33329C.abi.json",
+      "sourceMetaPath": "0x664cC3c1E294f425DD8b9440ea687D578b33329C.source.meta.json"
     },
     {
       "address": "0xeb19604e807381A5aE3D639BC0B4805400Bec55e",
-      "error": "Error: etherscan v2 http 502"
+      "name": "USDai",
+      "proxy": null,
+      "implementation": null,
+      "creation": {
+        "txHash": "0x7496cdbff359b7cf81128ae8f370183e0dded0fa73f110eabf11f2e00a858e97",
+        "creator": "0x5a9b0b5e7856359a581637a1b1df9c9d83c28e97",
+        "blockNumber": "373659963"
+      },
+      "abiPath": "0xeb19604e807381A5aE3D639BC0B4805400Bec55e.abi.json",
+      "sourceMetaPath": "0xeb19604e807381A5aE3D639BC0B4805400Bec55e.source.meta.json"
     },
     {
       "address": "0xb991e9588E10C8968e0670D0dfbC9FE0e3A56740",
-      "error": "Error: etherscan v2 http 502"
+      "name": "StakedUSDai",
+      "proxy": null,
+      "implementation": null,
+      "creation": {
+        "txHash": "0x3a73618f2f77b86d0406f5e32917691f5de976bb2179ed9b800af2738216e972",
+        "creator": "0x5a9b0b5e7856359a581637a1b1df9c9d83c28e97",
+        "blockNumber": "363603593"
+      },
+      "abiPath": "0xb991e9588E10C8968e0670D0dfbC9FE0e3A56740.abi.json",
+      "sourceMetaPath": "0xb991e9588E10C8968e0670D0dfbC9FE0e3A56740.source.meta.json"
     },
     {
       "address": "0xa33bC63c475D23459C7e881171E68C86fF888aC1",
-      "error": "Error: etherscan v2 http 502"
+      "name": "StakedUSDai",
+      "proxy": null,
+      "implementation": null,
+      "creation": {
+        "txHash": "0xee5d8d924ec0a2460f864e0dcf776c673925f522b75e12c40681f61896e59130",
+        "creator": "0x5a9b0b5e7856359a581637a1b1df9c9d83c28e97",
+        "blockNumber": "350975344"
+      },
+      "abiPath": "0xa33bC63c475D23459C7e881171E68C86fF888aC1.abi.json",
+      "sourceMetaPath": "0xa33bC63c475D23459C7e881171E68C86fF888aC1.source.meta.json"
     },
     {
       "address": "0x8b4Ca42bB3B1d789859f106222CF7DC5EEd48CCb",
-      "error": "Error: etherscan v2 http 502"
+      "name": "PendlePrincipalToken",
+      "proxy": null,
+      "implementation": null,
+      "creation": {
+        "txHash": "0x50346405d93bb5e7f8a09255a8102d3165edd49e841ad186805ddfc6b145b516",
+        "creator": "0x7781149a2ca561bf0f5b3ca03071b364f8b71e72",
+        "blockNumber": "369721504"
+      },
+      "abiPath": "0x8b4Ca42bB3B1d789859f106222CF7DC5EEd48CCb.abi.json",
+      "sourceMetaPath": "0x8b4Ca42bB3B1d789859f106222CF7DC5EEd48CCb.source.meta.json"
     },
     {
       "address": "0x936F210d277bf489A3211CeF9AB4BC47a7B69C96",
-      "error": "Error: etherscan v2 http 502"
+      "name": "PendlePrincipalToken",
+      "proxy": null,
+      "implementation": null,
+      "creation": {
+        "txHash": "0xdbe167b813e15c5a1e94fba037471215206cc0720a138ac03fa7899690c2eca9",
+        "creator": "0x7781149a2ca561bf0f5b3ca03071b364f8b71e72",
+        "blockNumber": "369722076"
+      },
+      "abiPath": "0x936F210d277bf489A3211CeF9AB4BC47a7B69C96.abi.json",
+      "sourceMetaPath": "0x936F210d277bf489A3211CeF9AB4BC47a7B69C96.source.meta.json"
     }
   ]
 }
