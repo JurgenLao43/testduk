@@ -1,0 +1,19 @@
+
+{"ts":"2025-09-08T23:01:45Z","chain":null,"block":null,"targets":[],"tool_calls":[],"hypothesis":"scaffold init","poc":"","result":"BLOCKED","attacker_pnl":0,"notes":"MANDATORY_STEP_BLOCKED: missing TARGET_ADDRESSES/FORK_BLOCK_NUMBER"}
+{"ts":"2025-09-08T23:13:08Z","stage":"1","chain":"ethereum","targets":17,"notes":"ABIs and proxy info fetched; snapshot/roles blocked until fork block"}
+{"ts":"2025-09-08T23:20:15Z","stage":"1b","chain":"ethereum","block":23237927,"summary":{
+  "chain": "ethereum",
+  "targets": 17,
+  "proxies": 13,
+  "implementations": 13
+}}
+{"ts":"2025-09-08T23:22:28Z","stage":"2","chain":"ethereum","block":23237927,"notes":"Mapped owners/governance/paused/access-control and EIP1967 traits for 17 targets"}
+{"ts":"2025-09-08T23:24:56Z","stage":"3","chain":"ethereum","block":23237927,"notes":"Stage 3 zero-case tests passed; no obvious arbitrary upgrade/mint/access-control bypass via direct calls"}
+{"ts":"2025-09-08T23:37:22Z","stage":"5A","chain":"ethereum","block":23237927,"attempt":"UniswapV2 WETH->USDC swing vs ChainlinkAdapter oracle","result":"Oracle unchanged; DEX moved sharply; no manipulation"}
+{"ts":"2025-09-08T23:44:50Z","stage":"6","chain":"ethereum","block":23237927,"notes":"PnL normalization non-positive (<=0) for large Uniswap trade"}
+{"ts":"2025-09-08T23:44:50Z","stage":"7","chain":"ethereum","block":23237927,"notes":"Oracle price stable vs DEX swing; invariant holds"}
+{"ts":"2025-09-09T10:53:32Z","stage":"5A-extend","chain":"ethereum","block":23237927,"notes":"Uniswap V3 0.05% and 1% tiers swung pool prices; oracle unchanged within 0.5%"}
+{"ts":"2025-09-09T11:08:31Z","stage":"5A-extend","chain":"ethereum","block":23237927,"notes":"Balancer zero-case (pool id required); Velodrome zero-case (non-mainnet). Core V3 tiers passed."}
+{"ts":"2025-09-09T13:35:34Z","stage":"final","chain":"ethereum","block":23237927,"notes":"Final sign-off: No exploitable oracle manipulation or privilege bypass; V2/V3 swings ineffective; reports updated."}
+{"ts":"2025-09-09T14:08:29Z","stage":"aster-1-3","chain":"ethereum","block":23325311,"target":"0x604DD02d620633Ae427888d41bfd15e38483736E","notes":"Proxy slots resolved; paused present=false; owner() absent; upgrade/grantRole/mint denied"}
+{"ts":"2025-09-09T22:28:01Z","stage":"aster-deepscan","chain":"ethereum","block":23325311,"target":"0x604DD02d620633Ae427888d41bfd15e38483736E","notes":"Roles mapped; critical guards enforced (pause/limit/withdraw); no bypass found"}

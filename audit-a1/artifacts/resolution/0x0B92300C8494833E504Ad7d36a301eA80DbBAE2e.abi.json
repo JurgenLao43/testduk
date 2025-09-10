@@ -1,0 +1,147 @@
+[
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_vaultConfigurator",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "_burnerRouterFactory",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "_defaultStakerRewardsFactory",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "_middleware",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "inputs": [],
+    "name": "burnerRouterFactory",
+    "outputs": [
+      {
+        "internalType": "contract IBurnerRouterFactory",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_owner",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "_asset",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "_agent",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "_network",
+        "type": "address"
+      }
+    ],
+    "name": "createVault",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "vault",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "delegator",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "burner",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "slasher",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "stakerRewards",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "defaultStakerRewardsFactory",
+    "outputs": [
+      {
+        "internalType": "contract IDefaultStakerRewardsFactory",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "epochDuration",
+    "outputs": [
+      {
+        "internalType": "uint48",
+        "name": "",
+        "type": "uint48"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "middleware",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "vaultConfigurator",
+    "outputs": [
+      {
+        "internalType": "contract IVaultConfigurator",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  }
+]

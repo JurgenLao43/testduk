@@ -1,0 +1,112 @@
+name: Audit (Arbitrum USDai)
+
+on:
+  workflow_dispatch:
+
+env:
+  CHAIN_ID: 42161
+  # Public addresses (safe to commit)
+  TARGET_ADDRESSES: >-
+    0x0A1a1A107E45b7Ced86833863f482BC5f4ed82EF
+    0x664cC3c1E294f425DD8b9440ea687D578b33329C
+    0xeb19604e807381A5aE3D639BC0B4805400Bec55e
+    0x0B2b2B2076d95Dda7817E785989fE353fE955eF9
+    0xb991e9588E10C8968e0670D0dfbC9FE0e3A56740
+    0xa33bC63c475D23459C7e881171E68C86fF888aC1
+    0xffA10065Ce1d1C42FABc46e06B84Ed8FfEb4baE5
+    0xffB20098FD7B8E84762eea4609F299D101427f24
+    0x8b4Ca42bB3B1d789859f106222CF7DC5EEd48CCb
+    0x936F210d277bf489A3211CeF9AB4BC47a7B69C96
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    outputs:
+      attackBlock: ${{ steps.block.outputs.attackBlock }}
+    defaults:
+      run:
+        working-directory: audit-a1
+    env:
+      ETHERSCAN_API_KEY: ${{ secrets.ETHERSCAN_API_KEY }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+          cache-dependency-path: 'audit-a1/package-lock.json'
+
+      - name: Install Node deps
+        run: npm ci
+
+      - name: Resolve ABIs via Etherscan V2 (multi-chain)
+        run: |
+          node scripts/resolve_abis_v2.cjs
+
+      - name: Ensure jq present
+        run: |
+          sudo apt-get update && sudo apt-get install -y jq
+
+      - name: Compute deterministic attack block (USDai proxy)
+        id: block
+        env:
+          TARGET_ADDRESS: 0x0A1a1A107E45b7Ced86833863f482BC5f4ed82EF
+          ARCHIVE_RPC_URL: ${{ secrets.ARCHIVE_RPC_URL }}
+        run: |
+          npx ts-node --transpile-only scripts/blockFinder.ts | tee block.out.json
+          echo "attackBlock=$(jq -r .attackBlock block.out.json)" >> $GITHUB_OUTPUT
+
+      - name: Upload resolution artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: resolution-artifacts
+          path: |
+            audit-a1/artifacts/resolution
+            audit-a1/block.out.json
+
+  build-test:
+    needs: prepare
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: audit-a1
+    env:
+      FOUNDRY_PROFILE: ci
+      MAINNET_RPC_URL: ${{ secrets.ARBITRUM_RPC_URL }}
+      TARGET_ADDRESSES: ${{ env.TARGET_ADDRESSES }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Download resolution artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: resolution-artifacts
+          path: audit-a1
+
+      - name: Install Foundry
+        run: |
+          curl -L https://foundry.paradigm.xyz | bash
+          ~/.foundry/bin/foundryup
+
+      - name: Show forge version
+        run: forge --version
+
+      - name: Forge build
+        run: forge build -vvv
+
+      - name: Forge tests (Arbitrum fork)
+        env:
+          FORK_BLOCK_NUMBER: ${{ needs.prepare.outputs.attackBlock }}
+        run: |
+          if [ -z "${FORK_BLOCK_NUMBER}" ]; then echo "No attack block; set secrets.FORK_BLOCK_NUMBER or ensure prepare job computed it"; exit 0; fi
+          forge test -vvv
+
+

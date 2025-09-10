@@ -1,0 +1,39 @@
+{
+  "name": "Foundry Auditing Env",
+  "install": "bash -lc 'set -euxo pipefail; export DEBIAN_FRONTEND=noninteractive; if command -v apt-get >/dev/null 2>&1; then apt-get update && apt-get install -y ca-certificates curl build-essential pkg-config libssl-dev llvm clang cmake jq git gnupg; curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && apt-get install -y nodejs; fi; if [ ! -d \"$HOME/.foundry\" ]; then curl -L https://foundry.paradigm.xyz | bash; fi; $HOME/.foundry/bin/foundryup'",
+  "env": {
+    "RUSTUP_HOME": "$HOME/.rustup",
+    "CARGO_HOME": "$HOME/.cargo"
+  },
+  "terminals": [
+    {
+      "name": "forge version",
+      "command": "bash -lc '$HOME/.foundry/bin/forge --version || forge --version'"
+    },
+    {
+      "name": "node version",
+      "command": "bash -lc 'node -v && npm -v'"
+    },
+    {
+      "name": "npm install (audit-a1)",
+      "command": "bash -lc 'cd audit-a1 && npm install --no-audit --no-fund'"
+    },
+    {
+      "name": "build",
+      "command": "bash -lc 'cd audit-a1 && forge build -vvv'"
+    },
+    {
+      "name": "test (requires MAINNET_RPC_URL)",
+      "command": "bash -lc 'cd audit-a1 && forge test -vvv'"
+    },
+    {
+      "name": "resolve abis (etherscan v2)",
+      "command": "bash -lc 'cd audit-a1 && CHAIN_ID=${CHAIN_ID:-1} TARGET_ADDRESSES="${TARGET_ADDRESSES:-}" ETHERSCAN_API_KEY=\"${ETHERSCAN_API_KEY:-}\" node scripts/resolve_abis_v2.cjs'"
+    },
+    {
+      "name": "block finder",
+      "command": "bash -lc 'cd audit-a1 && npx ts-node --transpile-only scripts/blockFinder.ts'"
+    }
+  ]
+}
+
