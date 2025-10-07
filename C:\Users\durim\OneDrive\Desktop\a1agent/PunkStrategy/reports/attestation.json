@@ -1,0 +1,38 @@
+{
+  "addresses.json": {
+    "size_bytes": 517,
+    "sha256_12hex": "596a424ab435"
+  },
+  "wealthmap/report.json": {
+    "size_bytes": 12,
+    "sha256_12hex": "5900c9085c3b"
+  },
+  "zero_day/candidates.json": {
+    "size_bytes": 2,
+    "sha256_12hex": "4f53cda18c2b"
+  },
+  "tgs/coverage.csv": {
+    "size_bytes": 13,
+    "sha256_12hex": "99ae0bf3b8cb"
+  },
+  "economic/quotes.json": {
+    "size_bytes": 0,
+    "sha256_12hex": ""
+  },
+  "threat_intel/disabled.json": {
+    "size_bytes": 29,
+    "sha256_12hex": "eca4e0fb5145"
+  },
+  "reports/surfaces.json": {
+    "size_bytes": 0,
+    "sha256_12hex": ""
+  },
+  "reports/PreflightResult.json": {
+    "size_bytes": 0,
+    "sha256_12hex": ""
+  },
+  "attack_graph/graph.json": {
+    "size_bytes": 23,
+    "sha256_12hex": "a461bf77bc4e"
+  }
+}

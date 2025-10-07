@@ -1,0 +1,35 @@
+# Node/OS
+.DS_Store
+Thumbs.db
+
+# Python
+__pycache__/
+.pytest_cache/
+.venv/
+env/
+venv/
+*.pyc
+
+# Foundry
+out/
+cache/
+broadcast/
+
+# Dotenv
+.env
+.env.local
+
+# Artifacts & reports
+reports/
+attack_graph/
+wealthmap/
+zero_day/
+economic/
+.cache/
+abi/
+artifacts/
+projects/*/artifacts/
+threat_intel/
+tgs/
+diffspec/
+attest/

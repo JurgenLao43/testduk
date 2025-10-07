@@ -1,0 +1,16 @@
+{
+  "CHAIN_ID": 1,
+  "FORK_BLOCK": 21000000,
+  "ADDRESSES": {
+    "strategy_or_treasury": "0xc50673EDb3A7b94E8CAD8a7d4E0cD68864E33eDF",
+    "punk_holder_wallet": "0x1244EAe9FA2c064453B5F605d708C0a0Bfba4838",
+    "cryptopunks_reference": "0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB"
+  },
+  "TOKENS": {},
+  "FLAGS": {},
+  "CHAIN_SPECIFICS": {
+    "rpc": "https://eth-mainnet.g.alchemy.com/v2/9i5WwzqMWjEtWYz_Xxbgh",
+    "explorer": "https://api.etherscan.io",
+    "notes": "Initial seed; auto-discovery pending."
+  }
+}
